@@ -35,7 +35,7 @@ float Civilizacion::getUbx()
 
 void Civilizacion::setUby(float v)
 {
-    ubx = v;
+    uby = v;
 }
 
 float Civilizacion::getUby()
