@@ -24,6 +24,22 @@ public:
     Civilizacion* buscar(const Civilizacion &c);
     void total();
     void resumen();
+    void setUsuario(const string &v);
+    string getUsuario();
+    size_t size();
+
+    friend ostream& operator<<(ostream &out, const VideoGame &v)
+    {
+        out<<v.usuario;
+        return out;
+    }
+
+    friend istream& operator>>(istream &in, VideoGame &v)
+    {
+        cout<<"Nombre de usuario: ";
+        getline(cin, v.usuario);
+        return in;
+    }
 };
 
 
