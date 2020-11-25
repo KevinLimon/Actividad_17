@@ -43,3 +43,8 @@ void VideoGame::insertar(const Civilizacion &c, size_t n)
 {
     civs.insert(civs.begin()+n, c);
 }
+
+void VideoGame::inicializar(const Civilizacion &c, size_t n)
+{
+    civs = vector<Civilizacion>(n, c);
+}

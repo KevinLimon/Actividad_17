@@ -10,6 +10,7 @@ int main(){
         cout<<"1) Nombre de usuario"<<endl;
         cout<<"2) Agregar civilizacion"<<endl;
         cout<<"3) Insertar civilizacion"<<endl;
+        cout<<"4) Crear civilizaciones"<<endl;
         cout<<"11) Resumen"<<endl;
         cout<<"12) Salir"<<endl;
         getline(cin, opc);
@@ -44,6 +45,17 @@ int main(){
                 vg.insertar(civ, pos);
             }
             cout<<endl;
+        }
+
+        else if(opc=="4"){
+            Civilizacion civ;
+            cin>>civ;
+            size_t n;
+            cout<<"Numero de civilizaciones que se crearan: ";
+            cin>>n;
+            cin.ignore();
+
+            vg.inicializar(civ, n);
         }
 
         else if(opc=="11"){
