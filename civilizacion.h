@@ -76,14 +76,11 @@ public:
     bool operator>(const Civilizacion& c)
     {
         return nombre > c.nombre;
-        return ubx > c.ubx;
     }
     bool operator>(const Civilizacion& c) const
     {
-        return nombre > c.nombre;
         return ubx > c.ubx;
     }
-
 
 };
 

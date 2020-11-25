@@ -77,7 +77,17 @@ void VideoGame::ordenarnombre()
 
 void VideoGame::ordenarx()
 {
-    sort(civs.begin(), civs.end(), greater<>()); 
+    sort(civs.begin(), civs.end(), [](Civilizacion c1, Civilizacion c2){return c1.getUbx()>c2.getUbx();}); 
+}
+
+void VideoGame::ordenary()
+{
+    sort(civs.begin(), civs.end(), [](Civilizacion c1, Civilizacion c2){return c1.getUby()>c2.getUby();}); 
+}
+
+void VideoGame::ordenarpunt()
+{
+    sort(civs.begin(), civs.end(), [](Civilizacion c1, Civilizacion c2){return c1.getPunt()>c2.getPunt();}); 
 }
 
 Civilizacion* VideoGame::eliminar(const string &nombre)

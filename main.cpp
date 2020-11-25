@@ -99,7 +99,12 @@ int main(){
             else if(op=="2"){
                 vg.ordenarx();
             }
-
+            else if(op=="3"){
+                vg.ordenary();
+            }
+            else if(op=="4"){
+                vg.ordenarpunt();
+            }
         }
 
         else if(opc=="8"){
@@ -178,7 +183,6 @@ int main(){
         else if(opc=="12"){
             break;
         }
-
     }
     return 0;
 }
