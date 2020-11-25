@@ -11,14 +11,20 @@ int main(){
         cout<<"2) Agregar civilizacion"<<endl;
         cout<<"3) Insertar civilizacion"<<endl;
         cout<<"4) Crear civilizaciones"<<endl;
+        cout<<"5) Primera civilizacion"<<endl;
+        cout<<"6) Ultima civilizacion"<<endl;
+        cout<<"7) Ordenar"<<endl;
+        cout<<"8) Eliminar civilizacion"<<endl;
+        cout<<"9) Buscar civilizacion"<<endl;
+        cout<<"10) Modificar civilizacion"<<endl;
         cout<<"11) Resumen"<<endl;
         cout<<"12) Salir"<<endl;
         getline(cin, opc);
+        cout<<endl;
 
         if(opc=="1"){
-            /*VideoGame v;
-            cin>>v;
-            cin.ignore();*/
+            cin>>vg;
+            cout<<endl;
         }
 
         else if(opc=="2"){
@@ -38,7 +44,7 @@ int main(){
             cin>>pos;
             cin.ignore();
 
-            if(pos>=vg.size()){
+            if(pos>=vg.total()){
                 cout<<"Posicion no valida"<<endl;
             }
             else{
@@ -56,9 +62,115 @@ int main(){
             cin.ignore();
 
             vg.inicializar(civ, n);
+            cout<<endl;
+        }
+
+        else if(opc=="5"){
+            Civilizacion *ptr = vg.primera();
+            if(ptr==nullptr){
+                cout<<"El vector esta vacio"<<endl;
+            }
+            else{
+                cout<<*ptr<<endl;
+            }
+        }
+
+        else if(opc=="6"){
+            Civilizacion *ptr = vg.ultimo();
+            if(ptr==nullptr){
+                cout<<"El vector esta vacio"<<endl;
+            }
+            else{
+                cout<<*ptr<<endl;
+            }
+        }
+
+        else if(opc=="7"){
+            string op;
+            cout<<"1) Ordenar por nombre"<<endl;
+            cout<<"2) Ordenar por ubicacion en x"<<endl;
+            cout<<"3) Ordenar por ubicacion en y"<<endl;
+            cout<<"4) Ordenar por puntuacion"<<endl;
+            getline(cin, op);
+
+            if(op=="1"){
+                vg.ordenarnombre();
+            }
+            else if(op=="2"){
+                vg.ordenarx();
+            }
+
+        }
+
+        else if(opc=="8"){
+            string aux;
+            cout<<"Nombre de la civilizacion a eliminar: ";
+            getline(cin, aux);
+            Civilizacion *ptr = vg.eliminar(aux);
+            if(ptr==nullptr){
+                cout<<"No se encontro el nombre en el vector"<<endl;
+            }
+            else{
+                *ptr;
+            }
+            cout<<endl;
+        }
+
+        else if(opc=="9"){
+            string aux;
+            cout<<"Nombre de la civilizacion a buscar: ";
+            getline(cin, aux);
+            Civilizacion *ptr = vg.buscar(aux);
+
+            if(ptr==nullptr){
+                cout<<"No encontrado"<<endl;
+            }
+            else{
+                cout<<left;
+                cout<<setw(13)<<"Nombre";
+                cout<<setw(20)<<"Ubicacion en x";
+                cout<<setw(20)<<"Ubicacion en y";
+                cout<<setw(10)<<"Puntuacion";
+                cout<<*ptr<<endl;
+            }
+            cout<<endl;
+        }
+
+        else if(opc=="10"){
+            Civilizacion civ;
+            string aux;
+            string op;
+            cout<<"Nombre de la civilizacion a modificar: ";
+            getline(cin, aux);
+            Civilizacion *ptr = vg.buscar(aux);
+
+            if(ptr==nullptr){
+                cout<<"Esta civilizacion no esta en el vector"<<endl;
+            }
+            else{
+                cout<<left;
+                cout<<setw(13)<<"Nombre";
+                cout<<setw(20)<<"Ubicacion en x";
+                cout<<setw(20)<<"Ubicacion en y";
+                cout<<setw(10)<<"Puntuacion";
+                cout<<endl;
+                cout<<*ptr<<endl;
+                cout<<"1) Modificar nombre"<<endl;
+                cout<<"2) Modificar ubicacion en x"<<endl;
+                cout<<"3) Modificar ubicacion en y"<<endl;
+                cout<<"4) Modificar puntuacion"<<endl;
+                getline(cin, op);
+                if(op=="1"){
+                    string k;
+                    cout<<"Nuevo nombre: ";
+                    getline(cin, k);
+                    civ.setNombre(k); 
+                }
+            }
         }
 
         else if(opc=="11"){
+            cout<<"Usuario: "<<vg<<"                     Total: "<<vg.total()<<endl;
             vg.resumen();
             cout<<endl;
         }

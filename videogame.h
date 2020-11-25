@@ -14,19 +14,18 @@ public:
     void agregar(const Civilizacion &c);
     void insertar(const Civilizacion &c, size_t n);
     void inicializar(const Civilizacion &c, size_t n);
-    void primera();
-    void ultimo();
+    Civilizacion* primera();
+    Civilizacion* ultimo();
     void ordenarnombre();
     void ordenarx();
     void ordenary();
     void ordenarpunt();
-    void eliminar(const string &nombre);
-    Civilizacion* buscar(const Civilizacion &c);
-    void total();
+    Civilizacion* eliminar(const string &nombre);
+    Civilizacion* buscar(const string &c);
     void resumen();
     void setUsuario(const string &v);
     string getUsuario();
-    size_t size();
+    size_t total();
 
     friend ostream& operator<<(ostream &out, const VideoGame &v)
     {

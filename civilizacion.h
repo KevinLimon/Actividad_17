@@ -47,6 +47,44 @@ public:
         cin>>c.punt;
         return in;
     }
+
+    bool operator==(const Civilizacion& c)
+    {
+        return nombre == c.nombre;
+    }
+    bool operator==(const Civilizacion& c) const
+    {
+        return nombre == c.nombre;
+    }
+
+    bool operator==(const string& c) const{
+        return nombre == c;
+    }
+    bool operator==(const string& c){
+        return nombre == c;
+    }
+
+    bool operator<(const Civilizacion& c)
+    {
+        return nombre < c.nombre;
+    }
+    bool operator<(const Civilizacion& c) const
+    {
+        return nombre < c.nombre;
+    }
+
+    bool operator>(const Civilizacion& c)
+    {
+        return nombre > c.nombre;
+        return ubx > c.ubx;
+    }
+    bool operator>(const Civilizacion& c) const
+    {
+        return nombre > c.nombre;
+        return ubx > c.ubx;
+    }
+
+
 };
 
 

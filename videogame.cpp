@@ -1,4 +1,5 @@
 #include"videogame.h"
+#include<algorithm>
 
 VideoGame::VideoGame()
 {
@@ -34,7 +35,7 @@ void VideoGame::resumen()
     }
 }
 
-size_t VideoGame::size()
+size_t VideoGame::total()
 {
     return civs.size();
 }
@@ -47,4 +48,56 @@ void VideoGame::insertar(const Civilizacion &c, size_t n)
 void VideoGame::inicializar(const Civilizacion &c, size_t n)
 {
     civs = vector<Civilizacion>(n, c);
+}
+
+Civilizacion* VideoGame::primera()
+{
+    if(civs.empty()){
+        return nullptr;
+    }
+    else{
+        return &civs.front();
+    }
+}
+
+Civilizacion* VideoGame::ultimo()
+{
+    if(civs.empty()){
+        return nullptr;
+    }
+    else{
+        return &civs.back();
+    }
+}
+
+void VideoGame::ordenarnombre()
+{
+    sort(civs.begin(), civs.end(), greater<>());
+}
+
+void VideoGame::ordenarx()
+{
+    sort(civs.begin(), civs.end(), greater<>()); 
+}
+
+Civilizacion* VideoGame::eliminar(const string &nombre)
+{
+    auto it = find(civs.begin(), civs.end(), nombre);
+    if(it == civs.end()){
+        return nullptr;
+    }
+    else{
+        return &(*civs.erase(it));
+    }
+}
+
+Civilizacion* VideoGame::buscar(const string &c)
+{
+    auto it = find(civs.begin(), civs.end(), c);
+    if(it == civs.end()){
+        return nullptr;
+    }
+    else{
+        return &(*it);
+    }
 }
