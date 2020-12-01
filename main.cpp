@@ -71,6 +71,12 @@ int main(){
                 cout<<"El vector esta vacio"<<endl;
             }
             else{
+                cout<<left;
+                cout<<setw(13)<<"Nombre";
+                cout<<setw(20)<<"Ubicacion en x";
+                cout<<setw(20)<<"Ubicacion en y";
+                cout<<setw(10)<<"Puntuacion";
+                cout<<endl;
                 cout<<*ptr<<endl;
             }
         }
@@ -81,6 +87,12 @@ int main(){
                 cout<<"El vector esta vacio"<<endl;
             }
             else{
+                cout<<left;
+                cout<<setw(13)<<"Nombre";
+                cout<<setw(20)<<"Ubicacion en x";
+                cout<<setw(20)<<"Ubicacion en y";
+                cout<<setw(10)<<"Puntuacion";
+                cout<<endl;
                 cout<<*ptr<<endl;
             }
         }
@@ -136,6 +148,7 @@ int main(){
                 cout<<setw(20)<<"Ubicacion en x";
                 cout<<setw(20)<<"Ubicacion en y";
                 cout<<setw(10)<<"Puntuacion";
+                cout<<endl;
                 cout<<*ptr<<endl;
             }
             cout<<endl;
@@ -169,8 +182,27 @@ int main(){
                     string k;
                     cout<<"Nuevo nombre: ";
                     getline(cin, k);
-                    civ.setNombre(k); 
+                    ptr->setNombre(k);
                 }
+                else if(op=="2"){
+                    float x;
+                    cout<<"Nueva ubicacion en x: ";
+                    cin>>x;
+                    ptr->setUbx(x);
+                }
+                else if(op=="3"){
+                    float y;
+                    cout<<"Nueva ubicacion en y: ";
+                    cin>>y;
+                    ptr->setUby(y);
+                }
+                else if(op=="4"){
+                    int p;
+                    cout<<"Nueva puntuacion: ";
+                    cin>>p;
+                    ptr->setPunt(p);
+                }
+                cin.ignore();
             }
         }
 
