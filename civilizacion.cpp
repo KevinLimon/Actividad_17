@@ -52,3 +52,42 @@ int Civilizacion::getPunt()
 {
     return punt;
 }
+
+void Civilizacion::agregarFinal(const Aldeano &a)
+{
+    aldeanos.push_back(a);
+}
+
+void Civilizacion::agregarInicio(const Aldeano &a)
+{
+    aldeanos.push_front(a);
+}
+
+void Civilizacion::print()
+{
+    cout<<left;
+    cout<<setw(15)<<"Nombre";
+    cout<<setw(10)<<"Edad";
+    cout<<setw(20)<<"Genero";
+    cout<<setw(10)<<"Salud";
+    cout<<endl;
+    for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
+        cout<< *it;
+    }
+}
+
+void Civilizacion::eliminarNombre(const string &nombre)
+{
+    for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
+        Aldeano &c = *it;
+
+        if(nombre == c.getNombre()){
+            aldeanos.erase(it);
+            cout<<"Se borro exitosamente"<<endl;
+            break;
+        }
+        else{
+            cout<<"No hay ningun aldeano con ese nombre"<<endl;
+        }
+    }
+}

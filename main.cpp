@@ -1,8 +1,21 @@
 #include<iostream>
 #include "videogame.h"
+#include"menu.h"
 using namespace std;
 
 int main(){
+
+    /*Civilizacion c;
+    Aldeano a1, a2;
+    cin>>a1;
+    cout<<endl;
+    cin>>a2;
+
+    c.agregarInicio(a2);
+    c.agregarFinal(a1);
+
+    c.print();*/
+
     VideoGame vg;
     string opc;
 
@@ -15,12 +28,14 @@ int main(){
         cout<<"6) Ultima civilizacion"<<endl;
         cout<<"7) Ordenar"<<endl;
         cout<<"8) Eliminar civilizacion"<<endl;
-        cout<<"9) Buscar civilizacion"<<endl;
+        cout<<"9) Buscar civilizacion por nombre"<<endl;
         cout<<"10) Modificar civilizacion"<<endl;
         cout<<"11) Resumen"<<endl;
-        cout<<"12) Salir"<<endl;
+        cout<<"12) Buscar civilizacion y agregar aldeanos"<<endl;
+        cout<<"13) Salir"<<endl;
         getline(cin, opc);
         cout<<endl;
+        
 
         if(opc=="1"){
             cin>>vg;
@@ -213,6 +228,23 @@ int main(){
         }
 
         else if(opc=="12"){
+            string aux;
+            cout<<"Nombre de la civilizacion a buscar: ";
+            getline(cin, aux);
+            Civilizacion *ptr = vg.buscar(aux);
+
+            if(ptr==nullptr){
+                cout<<"No encontrado"<<endl;
+            }
+            else{
+                Civilizacion civ;
+                cout<<"Si se encontro la civilizacion"<<endl;
+                menu(civ);
+            }
+        }
+
+
+        else if(opc=="13"){
             break;
         }
     }

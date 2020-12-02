@@ -1,6 +1,7 @@
 #ifndef ALDEANO_H
 #define ALDEANO_H
 #include <iostream>
+#include<iomanip>
 using namespace std;
 
 class Aldeano
@@ -25,6 +26,38 @@ public:
 
     void setSalud(float v);
     float getSalud();
+
+    friend ostream& operator<<(ostream &out, const Aldeano &a)
+    {
+        out<<left;
+        out << setw(15) << a.nombre;
+        out << setw(10) << a.edad;
+        out << setw(20) << a.genero;
+        out << setw(10) << a.salud;
+        out<<endl;
+        return out;
+    }
+
+    friend istream& operator>>(istream &in, Aldeano &a)
+    {
+        cout<<"Nombre: ";
+        getline(cin, a.nombre);
+        cout<<"Edad: ";
+        cin>>a.edad;
+        cout<<"Genero: ";
+        cin.ignore();
+        getline(cin, a.genero); 
+        cout<<"Salud: ";
+        cin>>a.salud;
+        return in;
+    }
+
+    bool operator==(const string& c) const{
+        return nombre == c;
+    }
+    bool operator==(const string& c){
+        return nombre == c;
+    }
 };
 
 

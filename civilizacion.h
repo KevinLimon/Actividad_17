@@ -3,6 +3,8 @@
 
 #include<iostream>
 #include<iomanip>
+#include"aldeano.h"
+#include <list>
 using namespace std;
 
 class Civilizacion
@@ -12,6 +14,7 @@ private:
     float ubx;
     float uby;
     int punt;
+    list<Aldeano> aldeanos;
 public:
     Civilizacion();
     Civilizacion(const string &nombre, float ubx, float uby, int punt);
@@ -23,6 +26,11 @@ public:
     float getUby();
     void setPunt(int v);
     int getPunt();
+    void agregarInicio(const Aldeano &a);
+    void agregarFinal(const Aldeano &a);
+    void print();
+    void eliminarNombre(const string &nombre);
+    Aldeano* buscar(const string &al);
     
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {
