@@ -136,6 +136,7 @@ int main(){
                 cout<<setw(20)<<"Ubicacion en x";
                 cout<<setw(20)<<"Ubicacion en y";
                 cout<<setw(10)<<"Puntuacion";
+                cout<<endl;
                 cout<<*ptr<<endl;
             }
             cout<<endl;
