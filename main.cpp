@@ -170,8 +170,27 @@ int main(){
                     string k;
                     cout<<"Nuevo nombre: ";
                     getline(cin, k);
-                    civ.setNombre(k); 
+                    ptr->setNombre(k);
                 }
+                else if(op=="2"){
+                    float x;
+                    cout<<"Nueva ubicacion en x: ";
+                    cin>>x;
+                    ptr->setUbx(x);
+                }
+                else if(op=="3"){
+                    float y;
+                    cout<<"Nueva ubicacion en y: ";
+                    cin>>y;
+                    ptr->setUby(y);
+                }
+                else if(op=="4"){
+                    int p;
+                    cout<<"Nueva puntuacion: ";
+                    cin>>p;
+                    ptr->setPunt(p);
+                }
+                cin.ignore();
             }
         }
 
