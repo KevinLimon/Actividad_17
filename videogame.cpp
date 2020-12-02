@@ -72,7 +72,7 @@ Civilizacion* VideoGame::ultimo()
 
 void VideoGame::ordenarnombre()
 {
-    sort(civs.begin(), civs.end(), greater<>());
+    sort(civs.begin(), civs.end(), [](Civilizacion c1, Civilizacion c2){return c1.getNombre()>c2.getNombre();});
 }
 
 void VideoGame::ordenarx()
