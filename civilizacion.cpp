@@ -127,3 +127,24 @@ void Civilizacion::clasificarSalud()
 {
     aldeanos.sort([](const Aldeano &a1, const Aldeano &a2){return a1.getSalud() > a2.getSalud();});
 }
+
+void Civilizacion::buscar(const string &nombre)
+{
+    for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
+        Aldeano &c = *it;
+
+        if(nombre == c.getNombre()){
+            cout<<left;
+            cout<<setw(15)<<"Nombre";
+            cout<<setw(10)<<"Edad";
+            cout<<setw(20)<<"Genero";
+            cout<<setw(10)<<"Salud";
+            cout<<endl;
+            cout<< *it <<endl;
+            break;
+        }
+        else if(it == aldeanos.end()){
+            cout<<"No hay ningun aldeano con ese nombre"<<endl;
+        }
+    }
+}

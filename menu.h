@@ -112,7 +112,10 @@ void menu(Civilizacion &c)
             }
         }
         else if(op=="4"){
-
+            string aux;
+            cout<<"Nombre del aldeano a buscar: ";
+            getline(cin, aux);
+            c.buscar(aux);
         }
         else if(op=="5"){
 
