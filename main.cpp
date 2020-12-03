@@ -237,7 +237,7 @@ int main(){
                 cout<<"No encontrado"<<endl;
             }
             else{
-                Civilizacion civ;
+                Civilizacion &civ = *ptr;
                 cout<<"Si se encontro la civilizacion"<<endl;
                 menu(civ);
             }
