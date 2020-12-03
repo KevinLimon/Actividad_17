@@ -112,3 +112,18 @@ void Civilizacion::clasificarNombre()
 {
     aldeanos.sort();
 }
+
+bool comparador(const Aldeano &a1, const Aldeano &a2)
+{
+    return a1.getEdad() > a2.getEdad();
+}
+
+void Civilizacion::clasificarEdad()
+{
+    aldeanos.sort(comparador);
+}
+
+void Civilizacion::clasificarSalud()
+{
+    aldeanos.sort([](const Aldeano &a1, const Aldeano &a2){return a1.getSalud() > a2.getSalud();});
+}

@@ -104,11 +104,11 @@ void menu(Civilizacion &c)
             }
 
             else if(o == "2"){
-
+                c.clasificarEdad();
             }
 
             else if(o == "3"){
-
+                c.clasificarSalud();
             }
         }
         else if(op=="4"){
