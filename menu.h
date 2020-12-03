@@ -2,6 +2,7 @@
 #define MENU_H
 
 #include"civilizacion.h"
+#include"videogame.h"
 
 Aldeano capturar()
 {
@@ -34,7 +35,7 @@ Aldeano capturar()
 void menu(Civilizacion &c)
 {
     string op;
-
+    int puntaje=0;
     while(true)
     {
         cout<<"1) Agregar aldeano"<<endl;
@@ -58,17 +59,19 @@ void menu(Civilizacion &c)
                 cin>>al;
                 cin.ignore();
                 c.agregarInicio(al);
+                puntaje = puntaje + 100;
             }
             else if(opcion=="2"){
                 c.agregarFinal(capturar());
                 cin.ignore();
+                puntaje = puntaje + 100;
             }
         }
         else if(op=="2"){
                 string opci;
                 cout<<"1) Eliminar por nombre"<<endl;
                 cout<<"2) Eliminar donde la salud sea menor a x"<<endl;
-                cout<<"3) Eliminar aldeanos con salud mayor o igual a 60"<<endl;
+                cout<<"3) Eliminar aldeanos con edad mayor o igual a 60"<<endl;
                 getline(cin, opci);
                 cout<<endl;
 
@@ -124,6 +127,8 @@ void menu(Civilizacion &c)
             c.modificar(aux);
         }
         else if(op=="6"){
+            cout<<endl;
+            cout <<"                  Puntaje: "<<puntaje<<endl;
             c.print();
         }
         else if(op=="7"){
