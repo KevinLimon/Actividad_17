@@ -74,6 +74,7 @@ void Civilizacion::print()
     for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
         cout<< *it;
     }
+    cout<<endl;
 }
 
 void Civilizacion::eliminarNombre(const string &nombre)
@@ -90,4 +91,24 @@ void Civilizacion::eliminarNombre(const string &nombre)
             cout<<"No hay ningun aldeano con ese nombre"<<endl;
         }
     }
+}
+
+bool comp(const Aldeano &al)
+{
+    return al.getEdad() > 60;
+}
+
+void Civilizacion::eliminarEdad()
+{
+    aldeanos.remove_if(comp);
+}
+
+void Civilizacion::eliminarSalud(float s)
+{
+    aldeanos.remove_if([s](const Aldeano &a){return a.getSalud() < s;});
+}
+
+void Civilizacion::clasificarNombre()
+{
+    aldeanos.sort();
 }

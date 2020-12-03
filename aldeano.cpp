@@ -5,7 +5,7 @@ void Aldeano::setNombre(const string &v)
     nombre = v;
 }
 
-string Aldeano::getNombre()
+string Aldeano::getNombre() const
 {
     return nombre;
 }
@@ -15,7 +15,7 @@ void Aldeano::setEdad(size_t v)
     edad = v;
 }
 
-size_t Aldeano::getEdad()
+size_t Aldeano::getEdad() const
 {
     return edad;
 }
@@ -35,7 +35,7 @@ void Aldeano::setSalud(float v)
     salud = v;
 }
 
-float Aldeano::getSalud()
+float Aldeano::getSalud() const
 {
     return salud;
 }

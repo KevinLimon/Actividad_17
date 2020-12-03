@@ -30,7 +30,11 @@ public:
     void agregarFinal(const Aldeano &a);
     void print();
     void eliminarNombre(const string &nombre);
-    Aldeano* buscar(const string &al);
+    void eliminarSalud(float s);
+    void eliminarEdad();
+    void clasificarNombre();
+    void clasificarEdad();
+    void clasificarSalud();
     
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {

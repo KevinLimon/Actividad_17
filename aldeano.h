@@ -16,16 +16,16 @@ public:
     Aldeano(const string &nombre, size_t edad, const string &genero, float salud): nombre(nombre), edad(edad), genero(genero), salud(salud) {}
 
     void setNombre(const string &v);
-    string getNombre();
+    string getNombre() const;
 
     void setEdad(size_t v);
-    size_t getEdad();
+    size_t getEdad() const;
 
     void setGenero(const string &v);
     string getGenero();
 
     void setSalud(float v);
-    float getSalud();
+    float getSalud() const;
 
     friend ostream& operator<<(ostream &out, const Aldeano &a)
     {
@@ -57,6 +57,11 @@ public:
     }
     bool operator==(const string& c){
         return nombre == c;
+    }
+
+    bool operator<(const Aldeano &a) const
+    {
+        return nombre < a.getNombre();
     }
 };
 

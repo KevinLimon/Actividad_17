@@ -56,12 +56,12 @@ void menu(Civilizacion &c)
             if (opcion=="1"){
                 Aldeano al;
                 cin>>al;
+                cin.ignore();
                 c.agregarInicio(al);
-                c.print();
             }
             else if(opcion=="2"){
                 c.agregarFinal(capturar());
-                c.print();
+                cin.ignore();
             }
         }
         else if(op=="2"){
@@ -74,23 +74,42 @@ void menu(Civilizacion &c)
 
                 if(opci=="1")
                 {
-                    Civilizacion civ;
                     string aux;
                     cout<<"Nombre del aldeano que quieres eliminar: ";
                     getline(cin, aux);
-                    civ.eliminarNombre(aux);
+                    c.eliminarNombre(aux);
                 }
                 else if(opci=="2")
                 {
-
+                    float aux;
+                    cout<<"X: ";
+                    cin>>aux;
+                    cin.ignore();
+                    c.eliminarSalud(aux);
                 }
                 else if(opci=="3")
                 {
-
+                    c.eliminarEdad();
                 }
         }
         else if(op=="3"){
+            string o;
+            cout<<"1) Clasificar aldeanos por nombre"<<endl;
+            cout<<"2) Clasificar aldeanos por edad"<<endl;
+            cout<<"3) Ordenar aldeanos por salud"<<endl;
+            getline(cin, o);
 
+            if(o == "1"){
+                c.clasificarNombre();
+            }
+
+            else if(o == "2"){
+
+            }
+
+            else if(o == "3"){
+
+            }
         }
         else if(op=="4"){
 
@@ -99,12 +118,11 @@ void menu(Civilizacion &c)
 
         }
         else if(op=="6"){
-            Civilizacion civ;
-            civ.print();
+            c.print();
         }
         else if(op=="7"){
-
-        }cin.ignore();
+            break;
+        }
     }
 }
 
