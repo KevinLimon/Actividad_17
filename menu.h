@@ -118,7 +118,10 @@ void menu(Civilizacion &c)
             c.buscar(aux);
         }
         else if(op=="5"){
-
+            string aux;
+            cout<<"Nombre del aldeano a modificar: ";
+            getline(cin, aux);
+            c.modificar(aux);
         }
         else if(op=="6"){
             c.print();

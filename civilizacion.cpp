@@ -148,3 +148,61 @@ void Civilizacion::buscar(const string &nombre)
         }
     }
 }
+
+void Civilizacion::modificar(const string &nombre)
+{
+    for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
+        Aldeano &c = *it;
+
+        if(nombre == c.getNombre()){
+            string op;
+            cout<<left;
+            cout<<setw(15)<<"Nombre";
+            cout<<setw(10)<<"Edad";
+            cout<<setw(20)<<"Genero";
+            cout<<setw(10)<<"Salud";
+            cout<<endl;
+            cout<< *it <<endl;
+            cout<<"1) Modificar nombre"<<endl;
+            cout<<"2) Modificar Edad"<<endl;
+            cout<<"3) Modificar genero"<<endl;
+            cout<<"4) Modificar salud"<<endl;
+            getline(cin, op);
+            if(op=="1")
+            {
+                string nv;
+                cout<<"Nuevo nombre: ";
+                getline(cin, nv);
+                c.setNombre(nv);
+            }
+            else if(op=="2")
+            {
+                size_t nv;
+                cout<<"Nueva edad: ";
+                cin>>nv;
+                cin.ignore();
+                c.setEdad(nv);
+            }
+            else if(op=="3")
+            {
+                string nv;
+                cout<<"Nuevo genero: ";
+                getline(cin, nv);
+                c.setGenero(nv);
+
+            }
+            else if(op=="4")
+            {
+                float nv;
+                cout<<"Nueva salud: ";
+                cin>>nv;
+                cin.ignore();
+                c.setSalud(nv);
+            }
+            break;
+        }
+        else if(it == aldeanos.end()){
+            cout<<"No hay ningun aldeano con ese nombre"<<endl;
+        }
+    }
+}

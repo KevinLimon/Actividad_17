@@ -36,6 +36,7 @@ public:
     void clasificarEdad();
     void clasificarSalud();
     void buscar(const string &nombre);
+    void modificar(const string &nombre);
     
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {
