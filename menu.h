@@ -35,7 +35,7 @@ Aldeano capturar()
 void menu(Civilizacion &c)
 {
     string op;
-    int puntaje=0;
+    int puntaje;
     while(true)
     {
         cout<<"1) Agregar aldeano"<<endl;
@@ -57,14 +57,20 @@ void menu(Civilizacion &c)
             if (opcion=="1"){
                 Aldeano al;
                 cin>>al;
+                puntaje = c.getPuntaje();
+                c.setPuntaje(puntaje+100);
                 cin.ignore();
                 c.agregarInicio(al);
-                puntaje = puntaje + 100;
             }
             else if(opcion=="2"){
+                int puntaje;
                 c.agregarFinal(capturar());
+                puntaje = c.getPuntaje();
+                c.setPuntaje(puntaje+100);
                 cin.ignore();
-                puntaje = puntaje + 100;
+            }
+            else{
+                cout<<"Opcion no valida"<<endl;
             }
         }
         else if(op=="2"){
@@ -94,6 +100,9 @@ void menu(Civilizacion &c)
                 {
                     c.eliminarEdad();
                 }
+                else{
+                    cout<<"Opcion no valida"<<endl;
+                }
         }
         else if(op=="3"){
             string o;
@@ -113,6 +122,9 @@ void menu(Civilizacion &c)
             else if(o == "3"){
                 c.clasificarSalud();
             }
+            else{
+                cout<<"Opcion no valida"<<endl;
+            }
         }
         else if(op=="4"){
             string aux;
@@ -128,11 +140,15 @@ void menu(Civilizacion &c)
         }
         else if(op=="6"){
             cout<<endl;
-            cout <<"                  Puntaje: "<<puntaje<<endl;
+            cout <<"                  Puntaje: "<<c.getPuntaje()<<endl;
+            cout<<endl;
             c.print();
         }
         else if(op=="7"){
             break;
+        }
+        else{
+            cout<<"Opcion no valida"<<endl;
         }
     }
 }

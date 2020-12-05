@@ -130,7 +130,11 @@ void Civilizacion::clasificarSalud()
 
 void Civilizacion::buscar(const string &nombre)
 {
-    for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
+    if(aldeanos.empty()){
+        cout<<"Esta lista esta vacia"<<endl;
+    }
+    else{
+        for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
         Aldeano &c = *it;
 
         if(nombre == c.getNombre()){
@@ -147,6 +151,8 @@ void Civilizacion::buscar(const string &nombre)
             cout<<"No hay ningun aldeano con ese nombre"<<endl;
         }
     }
+    }
+    
 }
 
 void Civilizacion::modificar(const string &nombre)
@@ -204,5 +210,15 @@ void Civilizacion::modificar(const string &nombre)
             cout<<"No hay ningun aldeano con ese nombre"<<endl;
         }
     }
+}
+
+void Civilizacion::setPuntaje(int p)
+{
+     puntaje = p;
+}
+
+int Civilizacion::getPuntaje()
+{
+    return puntaje;
 }
 

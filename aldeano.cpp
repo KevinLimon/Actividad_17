@@ -40,3 +40,4 @@ float Aldeano::getSalud() const
     return salud;
 }
 
+

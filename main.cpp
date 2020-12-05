@@ -247,6 +247,9 @@ int main(){
         else if(opc=="13"){
             break;
         }
+        else{
+            cout<<"Opcion no valida"<<endl;
+        }
     }
     return 0;
 }

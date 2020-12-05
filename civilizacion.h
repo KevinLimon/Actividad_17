@@ -14,6 +14,7 @@ private:
     float ubx;
     float uby;
     int punt;
+    int puntaje = 0;
     list<Aldeano> aldeanos;
 public:
     Civilizacion();
@@ -37,6 +38,8 @@ public:
     void clasificarSalud();
     void buscar(const string &nombre);
     void modificar(const string &nombre);
+    void setPuntaje(int p);
+    int getPuntaje();
     
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {
