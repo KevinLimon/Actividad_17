@@ -1,5 +1,6 @@
 #include"videogame.h"
 #include<algorithm>
+#include<fstream>
 
 VideoGame::VideoGame()
 {
@@ -110,4 +111,15 @@ Civilizacion* VideoGame::buscar(const string &c)
     else{
         return &(*it);
     }
+}
+
+void VideoGame::respaldar(Civilizacion &civ)
+{
+    ofstream archivo("Civilizaciones.txt", ios::out);
+    for(int i=0; i<civs.size(); ++i){
+        Civilizacion &c = civs[i];
+        archivo<< c.getNombre() <<endl;
+        c.respaldarAldeanos();
+    }
+    archivo.close();
 }

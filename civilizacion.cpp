@@ -1,4 +1,5 @@
 #include "civilizacion.h"
+#include<fstream>
 
 Civilizacion::Civilizacion()
 {
@@ -220,5 +221,18 @@ void Civilizacion::setPuntaje(int p)
 int Civilizacion::getPuntaje()
 {
     return puntaje;
+}
+
+void Civilizacion::respaldarAldeanos()
+{
+    ofstream ald(getNombre()+".txt", ios::out);
+    for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
+        Aldeano &aldeano =*it;
+        ald << aldeano.getNombre()<<endl;
+        ald << aldeano.getEdad()<<endl;
+        ald << aldeano.getGenero()<<endl;
+        ald << aldeano.getSalud()<<endl;
+    }
+    ald.close();
 }
 

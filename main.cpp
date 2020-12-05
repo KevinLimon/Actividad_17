@@ -32,7 +32,9 @@ int main(){
         cout<<"10) Modificar civilizacion"<<endl;
         cout<<"11) Resumen"<<endl;
         cout<<"12) Buscar civilizacion y agregar aldeanos"<<endl;
-        cout<<"13) Salir"<<endl;
+        cout<<"13) Respaldar"<<endl;
+        cout<<"14) Recuperar"<<endl;
+        cout<<"15) Salir"<<endl;
         getline(cin, opc);
         cout<<endl;
         
@@ -243,8 +245,16 @@ int main(){
             }
         }
 
-
         else if(opc=="13"){
+            Civilizacion civ;
+            vg.respaldar(civ);
+        }
+
+        else if(opc=="14"){
+
+        }
+
+        else if(opc=="15"){
             break;
         }
         else{

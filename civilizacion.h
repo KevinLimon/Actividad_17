@@ -40,6 +40,7 @@ public:
     void modificar(const string &nombre);
     void setPuntaje(int p);
     int getPuntaje();
+    void respaldarAldeanos();
     
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {
