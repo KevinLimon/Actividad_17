@@ -41,6 +41,7 @@ public:
     void setPuntaje(int p);
     int getPuntaje();
     void respaldarAldeanos();
+    void recuperarAldeanos();
     
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {

@@ -10,12 +10,12 @@ string Aldeano::getNombre() const
     return nombre;
 }
 
-void Aldeano::setEdad(size_t v)
+void Aldeano::setEdad(int v)
 {
     edad = v;
 }
 
-size_t Aldeano::getEdad() const
+int Aldeano::getEdad() const
 {
     return edad;
 }

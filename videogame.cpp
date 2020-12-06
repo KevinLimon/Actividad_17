@@ -123,3 +123,24 @@ void VideoGame::respaldar(Civilizacion &civ)
     }
     archivo.close();
 }
+
+void VideoGame::recuperar(Civilizacion &civ)
+{
+    ifstream archivo("Civilizaciones.txt");
+    if(archivo.is_open()){
+        string t;
+        float ub;
+        int p;
+        Civilizacion c;
+        while(true){
+            getline(archivo, t);
+            if(archivo.eof()){
+                break;
+            }
+            c.setNombre(t);
+            c.recuperarAldeanos();
+            agregar(c);
+        }
+    }
+    archivo.close();
+}

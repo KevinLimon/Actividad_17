@@ -8,7 +8,7 @@ Aldeano capturar()
 {
     Aldeano a;
     string nombre;
-    size_t edad;
+    int edad;
     string genero;
     float salud;
 

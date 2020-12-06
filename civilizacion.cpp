@@ -184,7 +184,7 @@ void Civilizacion::modificar(const string &nombre)
             }
             else if(op=="2")
             {
-                size_t nv;
+                int nv;
                 cout<<"Nueva edad: ";
                 cin>>nv;
                 cin.ignore();
@@ -234,5 +234,35 @@ void Civilizacion::respaldarAldeanos()
         ald << aldeano.getSalud()<<endl;
     }
     ald.close();
+}
+
+void Civilizacion::recuperarAldeanos()
+{
+    ifstream archivo(getNombre()+".txt");
+    if(archivo.is_open()){
+        string t;
+        int e;
+        float s;
+        Aldeano al;
+
+        while (true)
+        {
+            getline(archivo, t);
+            if(archivo.eof()){
+                break;
+            }
+            al.setNombre(t);
+            getline(archivo, t);
+            e = stoi(t);
+            al.setEdad(e);
+            getline(archivo, t);
+            al.setGenero(t);
+            getline(archivo, t);
+            s = stof(t);
+            al.setSalud(s);
+            agregarFinal(al);
+        }
+    }
+    archivo.close();
 }
 

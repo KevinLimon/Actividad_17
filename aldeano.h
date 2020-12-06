@@ -8,7 +8,7 @@ class Aldeano
 {
 private:
     string nombre;
-    size_t edad;
+    int edad;
     string genero;
     float salud;
 public:
@@ -18,8 +18,8 @@ public:
     void setNombre(const string &v);
     string getNombre() const;
 
-    void setEdad(size_t v);
-    size_t getEdad() const;
+    void setEdad(int v);
+    int getEdad() const;
 
     void setGenero(const string &v);
     string getGenero();
