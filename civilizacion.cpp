@@ -158,7 +158,11 @@ void Civilizacion::buscar(const string &nombre)
 
 void Civilizacion::modificar(const string &nombre)
 {
-    for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
+    if(aldeanos.empty()){
+        cout<<"No hay aldeanos en esta lista"<<endl;
+    }
+    else{
+        for(auto it = aldeanos.begin(); it != aldeanos.end(); it++){
         Aldeano &c = *it;
 
         if(nombre == c.getNombre()){
@@ -210,6 +214,7 @@ void Civilizacion::modificar(const string &nombre)
         else if(it == aldeanos.begin()){
             cout<<"No hay ningun aldeano con ese nombre"<<endl;
         }
+    }
     }
 }
 

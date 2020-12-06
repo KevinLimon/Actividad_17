@@ -129,8 +129,6 @@ void VideoGame::recuperar(Civilizacion &civ)
     ifstream archivo("Civilizaciones.txt");
     if(archivo.is_open()){
         string t;
-        float ub;
-        int p;
         Civilizacion c;
         while(true){
             getline(archivo, t);
