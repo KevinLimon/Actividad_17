@@ -27,7 +27,7 @@ public:
     string getUsuario();
     size_t total();
     void respaldar(Civilizacion &civ);
-    void recuperar(Civilizacion &civ);
+    void recuperar();
 
     friend ostream& operator<<(ostream &out, const VideoGame &v)
     {

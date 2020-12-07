@@ -251,8 +251,7 @@ int main(){
         }
 
         else if(opc=="14"){
-            Civilizacion civ;
-            vg.recuperar(civ);
+            vg.recuperar();
         }
 
         else if(opc=="15"){

@@ -119,26 +119,39 @@ void VideoGame::respaldar(Civilizacion &civ)
     for(int i=0; i<civs.size(); ++i){
         Civilizacion &c = civs[i];
         archivo<< c.getNombre() <<endl;
+        archivo << c.getUbx() <<endl;
+        archivo << c.getUby() << endl;
+        archivo << c.getPunt() << endl;
         c.respaldarAldeanos();
     }
     archivo.close();
 }
 
-void VideoGame::recuperar(Civilizacion &civ)
+void VideoGame::recuperar()
 {
     ifstream archivo("Civilizaciones.txt");
-    if(archivo.is_open()){
+    if(archivo.is_open())
+    {
+    Civilizacion* c;
         string t;
-        Civilizacion c;
+        float ub;
+        int p;
         while(true){
+            c = new Civilizacion();
             getline(archivo, t);
             if(archivo.eof()){
                 break;
             }
-            c.setNombre(t);
-            c.recuperarAldeanos();
-            agregar(c);
+            c->setNombre(t);
+            getline(archivo, t);
+            c->setUbx(atof(t.c_str()));
+            getline(archivo, t);
+            c->setUby(atof(t.c_str()));
+            getline(archivo, t);
+            c->setPunt(atoi(t.c_str()));
+            c->recuperarAldeanos();
+            agregar(*c);
         }
+        archivo.close();
     }
-    archivo.close();
 }

@@ -245,29 +245,25 @@ void Civilizacion::recuperarAldeanos()
 {
     ifstream archivo(getNombre()+".txt");
     if(archivo.is_open()){
+        Aldeano* al = nullptr;
         string t;
         int e;
         float s;
-        Aldeano al;
-
-        while (true)
+        while (!archivo.eof())
         {
+            al = new Aldeano();
             getline(archivo, t);
-            if(archivo.eof()){
-                break;
-            }
-            al.setNombre(t);
+            al->setNombre(t);
             getline(archivo, t);
-            e = stoi(t);
-            al.setEdad(e);
+            al->setEdad(atoi(t.c_str()));
             getline(archivo, t);
-            al.setGenero(t);
+            al->setGenero(t.c_str());
             getline(archivo, t);
-            s = stof(t);
-            al.setSalud(s);
-            agregarFinal(al);
+            al->setSalud(atof(t.c_str()));
+            agregarFinal(*al);
         }
+        aldeanos.pop_back();
+        archivo.close();
     }
-    archivo.close();
 }
 
