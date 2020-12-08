@@ -46,6 +46,7 @@ void menu(Civilizacion &c)
         cout<<"6) Mostrar aldeanos"<<endl;
         cout<<"7) Salir"<<endl;
         getline(cin, op);
+        cout<<endl;
 
         if(op=="1"){
             string opcion;
@@ -53,6 +54,7 @@ void menu(Civilizacion &c)
             cout<<"1) Agregar aldeano al inicio"<<endl;
             cout<<"2) Agregar aldeano al final"<<endl;
             getline(cin, opcion);
+            cout<<endl;
 
             if (opcion=="1"){
                 Aldeano al;
@@ -131,12 +133,15 @@ void menu(Civilizacion &c)
             cout<<"Nombre del aldeano a buscar: ";
             getline(cin, aux);
             c.buscar(aux);
+            cout<<endl;
         }
         else if(op=="5"){
             string aux;
             cout<<"Nombre del aldeano a modificar: ";
             getline(cin, aux);
+            cout<<endl;
             c.modificar(aux);
+            cout<<endl;
         }
         else if(op=="6"){
             cout<<endl;

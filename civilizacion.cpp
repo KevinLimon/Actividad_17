@@ -206,9 +206,6 @@ void Civilizacion::modificar(const string &nombre)
             }
             break;
         }
-        else if(it == aldeanos.begin()){
-            cout<<"No hay ningun aldeano con ese nombre"<<endl;
-        }
     }
 }
 
