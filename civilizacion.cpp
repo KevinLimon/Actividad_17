@@ -87,9 +87,6 @@ void Civilizacion::eliminarNombre(const string &nombre)
             cout<<"Se borro exitosamente"<<endl;
             break;
         }
-        else if(it == aldeanos.begin()){
-            cout<<"No hay ningun aldeano con ese nombre"<<endl;
-        }
     }
 }
 
@@ -146,9 +143,6 @@ void Civilizacion::buscar(const string &nombre)
             cout<<endl;
             cout<< *it <<endl;
             break;
-        }
-        else if(it == aldeanos.begin()&&it == aldeanos.end()){
-            cout<<"No hay ningun aldeano con ese nombre"<<endl;
         }
     }
     }
