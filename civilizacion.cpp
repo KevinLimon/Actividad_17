@@ -88,9 +88,6 @@ void Civilizacion::eliminarNombre(const string &nombre)
             cout<<"Se borro exitosamente"<<endl;
             break;
         }
-        else if(it == aldeanos.begin()){
-            cout<<"No hay ningun aldeano con ese nombre"<<endl;
-        }
     }
 }
 
@@ -210,9 +207,6 @@ void Civilizacion::modificar(const string &nombre)
                 c.setSalud(nv);
             }
             break;
-        }
-        else if(it == aldeanos.begin()){
-            cout<<"No hay ningun aldeano con ese nombre"<<endl;
         }
     }
     }
